@@ -7,13 +7,13 @@ import com.omnicuris.assignment.omnicuris.items.ItemRequest;
 public class OrderRequest {
 	
 	private String userEmail;
-	private List<ItemRequest> itemList;
+	private List<ItemRequest> items;
 	
 	
-	public OrderRequest(String userEmail, List<ItemRequest> itemList) {
+	public OrderRequest(String userEmail, List<ItemRequest> items) {
 		super();
 		this.userEmail = userEmail;
-		this.itemList = itemList;
+		this.items = items;
 	}
 	
 	
@@ -26,12 +26,12 @@ public class OrderRequest {
 	}
 	
 	
-	public List<ItemRequest> getItemList() {
-		return itemList;
+	public List<ItemRequest> getItems() {
+		return items;
 	}
 	
-	public void setItemList(List<ItemRequest> itemList) {
-		this.itemList = itemList;
+	public void setItemList(List<ItemRequest> items) {
+		this.items = items;
 	}
 	
 	

@@ -39,10 +39,10 @@ public class OrderServiceImpl {
 		newOrder.setUserEmail(userEmail);
 		orderService.save(newOrder); //Order created
 		
-		int noOfItems = orderRequest.getItemList().size();
+		int noOfItems = orderRequest.getItems().size();
 
 		for(int i = 0; i < noOfItems; i++) {
-			ItemRequest currentItemRequest = orderRequest.getItemList().get(i);
+			ItemRequest currentItemRequest = orderRequest.getItems().get(i);
 			long itemId = currentItemRequest.getId();
 			Item item = itemService.getItem(itemId); //getting item from itemID
 			
@@ -56,18 +56,21 @@ public class OrderServiceImpl {
 	}
 
 	private void validateOrderRequest(OrderRequest orderRequest) {
-		int noOfItems = orderRequest.getItemList().size();
+		int noOfItems = orderRequest.getItems().size();
+		if(noOfItems == 0) {
+			throw new BadRequestException("Items list should not be empty");
+		}
 
 		for(int i = 0; i < noOfItems; i++) {
-			ItemRequest currentItemRequest = orderRequest.getItemList().get(i);
-			long itemId = currentItemRequest.getId();
-			Item item = itemService.getItem(itemId); //item
-			int itemQtyInStock = item.getQuantity();
-			int itemQtyRequested = currentItemRequest.getQuantity();
-			
+			ItemRequest currentItemRequest = orderRequest.getItems().get(i);
+			int itemQtyRequested = currentItemRequest.getQuantity();		
 			if(itemQtyRequested <= 0) {
 				throw new OutOfStockException("Item quantity should be greater than zero");
 			}
+			long itemId = currentItemRequest.getId();
+			Item item = itemService.getItem(itemId); //item
+			int itemQtyInStock = item.getQuantity();
+			
 			if(itemQtyRequested > itemQtyInStock ) {
 				throw new OutOfStockException(item.getName()+ " is out of Stock");
 			}

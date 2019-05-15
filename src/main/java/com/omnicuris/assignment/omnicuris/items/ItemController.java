@@ -2,6 +2,8 @@ package com.omnicuris.assignment.omnicuris.items;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,8 +20,9 @@ public class ItemController {
 	private ItemServiceImpl itemServiceImpl;
 	
 	@PostMapping("items")
-	public void addItem(@RequestBody Item item) {
+	public void addItem(@RequestBody Item item,HttpServletResponse response) {
 		itemServiceImpl.addItem(item);
+	    response.setStatus(HttpServletResponse.SC_CREATED);
 	}
 	
 	@GetMapping("items/{id}")
