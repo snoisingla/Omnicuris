@@ -198,7 +198,7 @@ PostgreSQL is being used for persistent storage.
 psql -U postgres
 admin
 create database omnicuris
-\connect somerton
+\connect omnicuris
 ```
 
 ### Step 2: Run service using Eclipse IDE :
