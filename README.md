@@ -15,7 +15,7 @@ curl -X POST \
 }'
 ```
 
-Response : 200 OK
+Response : 201 OK
 
 2. Get item :
 ```
@@ -100,7 +100,7 @@ curl -X POST \
 	"items" : [{"id" : 42, "quantity" : 1}]
 }'
 ```
-Response : 200 OK
+Response : 201 OK
 
 ### Bulk
 ```
@@ -115,7 +115,7 @@ curl -X POST \
 }'
 ```
 
-Response : 200 OK
+Response : 201 OK
 
 ## All orders
 
