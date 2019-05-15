@@ -15,7 +15,7 @@ curl -X POST \
 }'
 ```
 
-Response : 201 OK
+Response : `201` (Empty)
 
 2. Get item :
 ```
@@ -25,7 +25,7 @@ curl -X GET \
   -H 'cache-control: no-cache'
 ```
 
-Response : 200 OK
+Response : `200` 
 ```
 {
     "name": "item2",
@@ -43,7 +43,7 @@ curl -X PUT \
   -d '{"quantity" : 30, "name" : "testUser", "price" : 40}'
 ```
 
-Response : 200 OK
+Response : `200` (Empty)
 
 4. Delete item
 ```
@@ -52,7 +52,7 @@ curl -X DELETE \
   -H 'Postman-Token: 36d7b624-eed2-4f41-886d-2f241d243e51' \
   -H 'cache-control: no-cache'
 ```
-Response : 200 OK
+Response : `200` (Empty)
 
 ## All items listing
 
@@ -63,7 +63,7 @@ curl -X GET \
   -H 'cache-control: no-cache'
 ```
 
-Response : 200 OK
+Response : `200`
 
 ```
 [
@@ -100,7 +100,7 @@ curl -X POST \
 	"items" : [{"id" : 42, "quantity" : 1}]
 }'
 ```
-Response : 201 OK
+Response : `201` 
 
 ### Bulk
 ```
@@ -115,7 +115,7 @@ curl -X POST \
 }'
 ```
 
-Response : 201 OK
+Response : `201` 
 
 ## All orders
 
@@ -125,7 +125,7 @@ curl -X GET \
   -H 'Postman-Token: 7c607990-c3e9-4a65-b8d6-dcb24fe232d7' \
   -H 'cache-control: no-cache'
  ```
- Response : 200 OK
+ Response : `200` 
 
 ```
 [
