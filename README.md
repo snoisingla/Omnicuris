@@ -203,7 +203,7 @@ create database omnicuris
 
 ### Step 2: Run service using Eclipse IDE :
 1. Download and install Eclipse Java EE IDE for Web Developers.
-2. Clone this project somerton-coding-challenge-backend
+2. Clone the project
 3. Run Eclipse. Go to File -> Import -> Maven -> Existing Maven Projects and select the cloned folder
 4. Use Eclipse -> Run to start the server
 
